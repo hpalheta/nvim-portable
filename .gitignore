@@ -1,0 +1,11 @@
+.DS_Store
+
+# Local binaries
+nvim-macos-x86_64/
+*.tar.gz
+
+# Backup configs
+config/nvim_old_*/
+
+# Lazy cache
+config/nvim/lazy-lock.json
