@@ -30,6 +30,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
           position = "left",
         })
       end)
+
+      vim.cmd("redraw!")
     end, 50)
   end,
 })

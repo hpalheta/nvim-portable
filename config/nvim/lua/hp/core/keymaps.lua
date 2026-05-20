@@ -3,8 +3,14 @@ local map = vim.keymap.set
 -- save file
 map("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
 
--- quit
-map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
+-- save all
+map("n", "<leader>w", "<cmd>wa<CR>", { desc = "Save all" })
+
+-- save and force quit all
+map("n", "<leader>q", "<cmd>wqa!<CR>", { desc = "Save and quit all" })
+
+-- force quit without saving
+map("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Force quit all" })
 
 -- file explorer
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "File explorer" })
