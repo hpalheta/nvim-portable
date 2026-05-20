@@ -15,5 +15,21 @@ opt.splitbelow = true
 
 require("hp.core.keymaps")
 
-vim.opt.exrc = true
-vim.opt.secure = true
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    pcall(vim.cmd, "ToggleTerm direction=horizontal size=12")
+
+    vim.defer_fn(function()
+      pcall(vim.cmd, "wincmd k")
+    end, 10)
+
+    vim.defer_fn(function()
+      pcall(function()
+        require("neo-tree.command").execute({
+          action = "show",
+          position = "left",
+        })
+      end)
+    end, 50)
+  end,
+})
